@@ -252,19 +252,13 @@ function dim_text()	// task-ul II) 10.
 	c.insertBefore(p,c.childNodes[0]);
 }
 
-function adauga_animatie()	// task-ul III) 1.
+function adauga_animatie(a)	// task-ul III) 1.
 {
-	var t=document.getElementById("t");
-	t.style.textAlign="center";
-	t.style.position="relative";
-	t.style.animationName="animatie2";
-	t.style.animationDelay="3s";
-	t.style.animationDuration="5s";
-	t.animationFillMode="forwards";
-	t.animationTimingFunction="linear";
-	t.animationDirection="alternate";
-	t.style.animationIterationCount="2";
-	t.style.transformOrigin="50% 200px";
+	var px = 650 + 100 * Math.cos(a);
+	var py = 150 + 100 * Math.sin(a);
+  
+	document.getElementById("t").style.left = px + "px";
+	document.getElementById("t").style.top = py + "px";
 }
 //---------------------------------------------------------------------------------------SFARSIT cerinte suplimentare--------------------------------------------------------------
 
@@ -296,7 +290,14 @@ window.onload=function()
 	localStorage.setItem("dim_t",opt);
 	document.getElementById("sel").selectedIndex=opt;
 	schimba_dim();
-	adauga_animatie();
+	
+	document.getElementById("t").visibility="visible";
+	var a=0;
+	setInterval(function()
+				{
+					a = (a + Math.PI / 360) % (Math.PI * 2);
+					adauga_animatie(a);
+				}, 5);
 }
 
 window.onkeypress=function()
