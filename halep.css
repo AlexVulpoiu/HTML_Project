@@ -1,0 +1,484 @@
+*
+{
+	margin:0;
+}
+
+#citat
+{
+	height:150px;
+	width:80%;
+	background-color:cyan;
+	position:fixed;
+}
+
+#citat>p
+{
+	font:30px 'alex brush',sans-serif;
+	position:absolute;
+	top:15px;
+	padding:20px;
+}
+
+#autograf
+{
+	background-color:cyan;
+	height:150px;
+	width:20%;
+	position:fixed;
+	right:0;
+}
+
+#autograf>img
+{
+	position:absolute;
+	top:25px;
+	left:15%;
+}
+
+body
+{
+	margin:0 auto;
+}
+
+body::after
+{
+	content:"";
+	background-image:url("simona_fundal.jpg");
+	opacity:0.3;
+	top:150px;
+	left:15%;
+	right:15%;
+	bottom:0;
+	position:fixed;
+	z-index:-100;
+}
+
+#meniu
+{
+	width:15%;
+	height:608px;
+	background-color:#ffffcc;
+	position:fixed;
+	left:0;
+	top:150px;
+	float:left;
+}
+
+#submeniu
+{
+	visibility:hidden;
+	padding:0;
+}
+
+#meniu>h3:hover+#submeniu
+{
+	visibility:visible;
+}
+
+#meniu>ul:hover
+{
+	visibility:visible;
+}
+
+#meniu>ul>li:hover
+{
+	background-color:lightgreen;
+}
+
+#meniu>h3
+{
+	text-align:center;
+	font-size:25px;
+	background-color:#ffcc99;
+}
+
+#submeniu li
+{
+	text-align:center;
+	font-size:15px;
+}
+
+aside
+{
+	clear:both;
+	height:608px;
+	width:15%;
+	position:fixed;
+	top:150px;
+	right:0;
+	float:right;
+	background-color:#ffffcc;
+}
+
+#continut
+{
+	clear:both;
+	width:70%;
+	height:66.2%;
+	position:fixed;
+	top:150px;
+	left:15%;
+	right:15%;
+	overflow-y:scroll;
+	font-family:'martel',serif;
+}
+
+#titlu
+{
+	text-align:center;
+	visibility:hidden;
+	/*
+	animation-name:animatie_titlu;
+	animation-duration:2s;
+	animation-delay:0s;
+	animation-iteration-count:1;
+	animation-timing-function:linear;
+	animation-fill-mode:forwards;
+	*/
+}
+
+@keyframes animatie_titlu
+{
+	0%
+	{
+		visibility:hidden;
+		font:0px martel,serif;
+		font-weight:bold;
+	}
+	20%
+	{
+		visibility:visible;
+		font:6px martel,serif;
+		font-weight:bold;
+	}
+	100%
+	{
+		visibility:visible;
+		font:30px martel,serif;
+		font-weight:bold;
+		text-align:center;
+	}
+}
+
+#info_t
+{
+	text-decoration:underline;
+	font-size:20px;
+	padding:10px;
+}
+
+p
+{
+	text-indent:25px;
+	padding:10px;
+	z-index:-2;
+}
+
+#career_t
+{
+	text-decoration:underline;
+	font-size:20px;
+	padding:10px;
+}
+
+.an
+{
+	font-size:20px;
+	padding:10px;
+}
+
+#stats_t
+{
+	text-decoration:underline;
+	font-size:20px;
+	padding:10px;
+}
+
+.tabel,th,td
+{
+	border:2px solid black;
+	padding:3px;
+}
+
+.tabel
+{
+	border-collapse:collapse;
+	margin:auto;
+	background-color:#ffa64d;
+}
+
+td
+{
+	text-align:center;
+}
+
+.col1
+{
+	width:130px;
+}
+
+caption
+{
+	font-weight:bold;
+}
+
+#team_t
+{
+	text-decoration:underline;
+	font-size:20px;
+	padding:10px;	
+}
+
+#foto_t
+{
+	text-decoration:underline;
+	font-size:20px;
+	padding:10px;
+}
+
+.glr
+{
+	padding-top:10px;
+	padding-left:100px;
+	display:grid;
+	grid-gap:10px;
+	grid-template-columns:auto auto;
+	grid-template-rows:auto auto auto;
+}
+
+#galerie img
+{
+	height:100px;
+	width:200px;
+	transition:width 2s,height 2s;
+}
+
+figcaption
+{
+	text-align:center;
+	max-width:200px;
+}
+
+#galerie figure>img:hover
+{
+	height:350px;
+	width:700px;
+	z-index:5;
+}
+
+#footer
+{
+	height:105px;
+	background-color:cyan;
+	position:fixed;
+	bottom:0;
+	left:15%;
+	right:15%;
+	z-index:-1;
+}
+
+#footer>p
+{
+	font:30px 'alex brush',sans-serif;
+}
+
+#reclama>a>figure>img
+{
+	padding:15px;
+	padding-top:80px;
+	width:200px;
+	height:400px;
+}
+
+#reclama>a>figure>figcaption
+{
+	padding:15px;
+}
+
+iframe
+{
+	padding:10px;
+}
+
+@media screen and (max-width:1450px) and (min-width:1300px) and (min-height:740px)
+{
+	#footer
+	{
+		height:130px;
+	}
+	#continut
+	{
+		height:62%;
+	}
+}
+
+@media screen and (max-height:740px)
+{
+	#footer
+	{
+		height:10%;
+	}
+	#footer p,#citat p
+	{
+		font-size:1.5em;
+		padding:0;
+		text-align:center;
+	}
+	#autograf
+	{
+		visibility:hidden;
+	}
+	#citat
+	{
+		height:10%;
+		width:100%;
+	}
+	#continut
+	{
+		clear:both;
+		position:fixed;
+		top:10%;
+		height:80%;
+		background-color:#ffff66;
+	}
+	#autograf img
+	{
+		padding:0;
+	}
+	aside
+	{
+		position:fixed;
+		top:10%;
+		float:right;
+	}
+	#meniu
+	{
+		position:fixed;
+		top:10%;
+		float:left;
+	}
+}
+
+@media screen and (max-width:1300px)
+{
+	#autograf
+	{
+		visibility:hidden;
+	}
+	#citat
+	{
+		width:100%;
+		height:13%;
+	}
+	#citat>p,#footer>p
+	{
+		padding:0;
+	}
+	#citat>p,#meniu>h3,#footer>p
+	{
+		font-size:1.25em;
+		font-weight:bold;
+	}
+	#meniu
+	{
+		width:100%;
+		height:18%;
+		position:fixed;
+		left:0;
+		right:0;
+		top:13%;
+		float:none;
+	}
+	#footer
+	{
+		width:100%;
+		height:15%;
+		position:fixed;
+		left:0;
+		right:0;
+		bottom:0;
+	}
+	#continut
+	{
+		width:100%;
+		position:fixed;
+		left:0;
+		right:0;
+		top:31%;
+		height:54.5%;
+		background-color:#e6ccff;
+		overflow-x:hidden;
+	}
+	#continut p,#continut h2,#continut h3
+	{
+		font-size:0.8em;
+	}
+	#galerie img
+	{
+		height:40px;
+		width:80px;
+		transition:width 2s,height 2s;
+	}
+	#galerie figure>img:hover
+	{
+		height:100px;
+		width:200px;
+		z-index:5;
+	}
+	figcaption
+	{
+		max-width:80px;
+		font-size:0.8em;
+	}
+	.tabel
+	{
+		font-size:0.7em;
+	}
+	aside
+	{
+		visibility:hidden;
+	}
+}
+
+.ani
+{
+	margin-left:20px;
+	color:#006600;
+	font-weight:bold;
+}
+
+.btn
+{
+	background-color:#0099ff;
+	color:yellow;
+	font-family:lucida sans unicode;
+	height:30px;
+	border-radius:20px;
+}
+
+.sctbt
+{
+	margin:10px;
+	display:grid;
+	grid-template-columns:auto auto auto auto auto;
+	grid-gap:10px;
+}
+
+.stil1
+{
+	padding-top:10px;
+	padding-left:100px;
+	display:grid;
+	grid-gap:10px;
+	grid-template-columns:auto auto;
+	grid-template-rows:auto auto auto;
+}
+
+.stil2
+{
+	padding:10px;
+	display:grid;
+	grid-gap:20px;
+	grid-template-columns:auto auto auto;
+	grid-template-rows:auto auto;
+}
